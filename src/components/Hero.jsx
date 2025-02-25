@@ -107,7 +107,7 @@ const Hero = () => {
             user experience and performance.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="flex flex-col sm:flex-row gap-6 mb-16">
             <a href="#projects" className="btn btn-primary">
               View My Work
             </a>
@@ -116,7 +116,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="animate-bounce mt-4">
             <a
               href="#about"
               className="text-slate-400 hover:text-white transition-colors duration-300"
