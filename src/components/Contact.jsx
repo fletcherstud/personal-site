@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,25 +24,44 @@ const Contact = () => {
   const handleSubmit = e => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
+    // Get EmailJS credentials from environment variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      // Reset form after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
+    emailjs
+      .sendForm(serviceId, templateId, form.current, publicKey)
+      .then(result => {
+        console.log('Email sent successfully:', result.text);
+        setSubmitStatus('success');
+
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+
+        // Reset status after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 5000);
+      })
+      .catch(error => {
+        console.error('Failed to send email:', error.text);
+        setSubmitStatus('error');
+
+        // Reset error status after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 5000);
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
-
-      // Reset status after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
-    }, 1500);
   };
 
   return (
@@ -57,7 +78,7 @@ const Contact = () => {
           <div className="card p-6 md:p-8">
             <h3 className="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
 
-            <form onSubmit={handleSubmit}>
+            <form ref={form} onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-1">
@@ -136,6 +157,12 @@ const Contact = () => {
                   Your message has been sent successfully! I&apos;ll get back to you soon.
                 </div>
               )}
+
+              {submitStatus === 'error' && (
+                <div className="mt-4 p-3 bg-red-500/20 border border-red-500/30 rounded-md text-red-400 text-sm">
+                  There was an error sending your message. Please try again later.
+                </div>
+              )}
             </form>
           </div>
 
@@ -164,10 +191,10 @@ const Contact = () => {
                 <div>
                   <h4 className="text-lg font-medium text-white">Email</h4>
                   <a
-                    href="mailto:john.fletcher@example.com"
+                    href="mailto:johnfletcher831@gmail.com"
                     className="text-slate-300 hover:text-blue-400 transition-colors duration-300"
                   >
-                    john.fletcher@example.com
+                    johnfletcher831@gmail.com
                   </a>
                 </div>
               </div>
@@ -195,7 +222,7 @@ const Contact = () => {
                     href="tel:+1234567890"
                     className="text-slate-300 hover:text-indigo-400 transition-colors duration-300"
                   >
-                    +1 (234) 567-890
+                    +1 (831) 261-1452
                   </a>
                 </div>
               </div>
@@ -225,7 +252,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium text-white">Location</h4>
-                  <p className="text-slate-300">San Francisco, California</p>
+                  <p className="text-slate-300">Denver, Colorado</p>
                 </div>
               </div>
             </div>
@@ -234,7 +261,7 @@ const Contact = () => {
               <h4 className="text-lg font-medium text-white mb-4">Connect With Me</h4>
               <div className="flex justify-center space-x-5">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/fletcherstud"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-slate-700/70 flex items-center justify-center text-slate-300 hover:bg-slate-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
@@ -254,7 +281,7 @@ const Contact = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/john-fletcher1998/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-slate-700/70 flex items-center justify-center text-slate-300 hover:bg-slate-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
@@ -270,7 +297,7 @@ const Contact = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://twitter.com/yourusername"
+                  href="https://x.com/fletchstud"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-slate-700/70 flex items-center justify-center text-slate-300 hover:bg-slate-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"

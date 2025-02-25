@@ -78,20 +78,30 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-3">
-                  <a
-                    href={project.link}
-                    className="flex-1 px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-medium transition-all duration-300 text-sm text-center"
-                  >
-                    View Project
-                  </a>
-                  <a
-                    href={project.download}
-                    className="flex-1 px-4 py-2 rounded-md border border-slate-600 hover:border-slate-400 text-white font-medium transition-all duration-300 text-sm text-center"
-                  >
-                    Download
-                  </a>
-                </div>
+                {project.title === 'New Note' ? (
+                  <div className="text-center py-2 text-indigo-400 font-medium">Coming Soon</div>
+                ) : (
+                  <div className="flex gap-3">
+                    <a
+                      href={project.link}
+                      className="flex-1 px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-medium transition-all duration-300 text-sm text-center"
+                    >
+                      View Project
+                    </a>
+                    <a
+                      href={project.download}
+                      className="flex-1 px-4 py-2 rounded-md border border-slate-600 hover:border-slate-400 text-white font-medium transition-all duration-300 text-sm text-center"
+                    >
+                      Download
+                    </a>
+                  </div>
+                )}
+
+                {project.title === 'Knowhere' && (
+                  <div className="absolute bottom-2 left-2 text-xs text-indigo-400/80 italic">
+                    *Knowhere repo is currently private
+                  </div>
+                )}
               </div>
             </div>
           ))}
