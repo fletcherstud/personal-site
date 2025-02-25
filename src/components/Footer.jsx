@@ -12,15 +12,14 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-slate-400 mt-2 max-w-md">
-              Software Engineer specializing in modern web technologies and secure payment
-              solutions.
+              Software Engineer that likes to work on cool projects.
             </p>
           </div>
 
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-5 mb-6">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/fletcherstud"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -35,7 +34,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/john-fletcher1998/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -46,7 +45,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://x.com/fletchstud"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
