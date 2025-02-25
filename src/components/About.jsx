@@ -1,11 +1,11 @@
 const About = () => {
   const skills = [
-    { name: 'JavaScript', level: 90 },
-    { name: 'React', level: 85 },
-    { name: 'Node.js', level: 80 },
-    { name: 'TypeScript', level: 75 },
-    { name: 'HTML/CSS', level: 90 },
-    { name: 'Python', level: 70 },
+    { name: 'Spring Boot', level: 95 },
+    { name: 'React', level: 90 },
+    { name: 'Java', level: 90 },
+    { name: 'Kotlin', level: 75 },
+    { name: 'AWS', level: 80 },
+    { name: 'System Design', level: 95 },
     { name: 'SQL', level: 75 },
     { name: 'Git', level: 85 },
   ];
@@ -24,7 +24,7 @@ const About = () => {
               <p className="text-slate-300 mb-6 leading-relaxed">
                 I&apos;m a passionate software engineer with a focus on creating elegant, efficient,
                 and user-friendly applications. Currently working at Garmin on the Garmin Pay
-                platform team, I specialize in developing secure and seamless payment solutions.
+                platform team.
               </p>
 
               <p className="text-slate-300 mb-6 leading-relaxed">
@@ -34,9 +34,9 @@ const About = () => {
               </p>
 
               <p className="text-slate-300 mb-8 leading-relaxed">
-                When I&apos;m not coding, you can find me exploring new technologies, contributing
-                to open-source projects, or working on my personal projects that aim to solve
-                real-world problems.
+                When I&apos;m not coding, you can find me exploring new technologies or working on
+                my personal projects that aim to solve real-world problems. I also am a helicopter
+                pilot and love to fly!
               </p>
 
               <div className="flex gap-4">
@@ -73,14 +73,14 @@ const About = () => {
               <div className="grid grid-cols-3 gap-3">
                 {[
                   'React',
-                  'Node.js',
+                  'Spring Boot',
                   'JavaScript',
-                  'TypeScript',
-                  'HTML5',
-                  'CSS3',
+                  'Java',
+                  'Kotlin',
+                  'AWS',
                   'Git',
                   'REST API',
-                  'MongoDB',
+                  'PostgreSQL',
                 ].map(tech => (
                   <div
                     key={tech}

@@ -1,12 +1,18 @@
 import { useEffect, useRef } from 'react';
-
+import profilePhoto from '../assets/profile_pic.jpg';
 const Hero = () => {
   const typingRef = useRef(null);
 
   useEffect(() => {
     if (!typingRef.current) return;
 
-    const roles = ['Software Engineer', 'Frontend Developer', 'React Specialist', 'Problem Solver'];
+    const roles = [
+      'Software Engineer',
+      'Backend Developer',
+      'Helicopter Pilot',
+      'Problem Solver',
+      'Builder',
+    ];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -49,41 +55,9 @@ const Hero = () => {
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="mb-6 animate-float">
-            <svg
-              className="w-16 h-16 md:w-20 md:h-20 text-indigo-500 animate-pulse-slow"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9 9H9.01"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M15 9H15.01"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-indigo-500/30 shadow-lg shadow-indigo-500/20">
+              <img src={profilePhoto} alt="John Fletcher" className="w-full h-full object-cover" />
+            </div>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tighter">
