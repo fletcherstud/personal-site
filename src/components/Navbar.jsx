@@ -28,7 +28,7 @@ const Navbar = () => {
   const socialLinks = [
     {
       name: 'Email',
-      href: 'mailto:john.fletcher@example.com',
+      href: 'mailto:johnfletcher831@gmail.com',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ const Navbar = () => {
     },
     {
       name: 'Twitter',
-      href: 'https://twitter.com/yourusername',
+      href: 'https://x.com/fletchstud',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const Navbar = () => {
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/yourusername',
+      href: 'https://www.linkedin.com/in/john-fletcher1998/',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const Navbar = () => {
     },
     {
       name: 'GitHub',
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/fletcherstud',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,6 @@
 import knowhere_preview from '../assets/knowhere_preview.png';
+import spory_preview from '../assets/spory_preview.jpg';
+import new_note_preview from '../assets/new_note_preview.png';
 
 const Projects = () => {
   const projects = [
@@ -6,7 +8,7 @@ const Projects = () => {
       title: 'Knowhere',
       description:
         'A centralized platform for businesses to promote their day to day experiences directly to customers so users can discover, plan, and attend local events with friends.',
-      image: { knowhere_preview },
+      image: knowhere_preview,
       technologies: ['React Native', 'Spring Boot', 'AWS'],
       link: 'https://knowheresocial.com',
       download: 'https://links.knowheresocial.com/download',
@@ -15,7 +17,7 @@ const Projects = () => {
       title: 'Spory AI',
       description:
         'An app that turns your location into a historical deep dive, powered by AI. Discover the stories behind the places you visit or where you live. Feel more connected to a place, now!',
-      image: '/projects/spory-ai.jpg',
+      image: spory_preview,
       technologies: ['React Native', 'Firebase', 'OpenAI API'],
       link: 'https://github.com/fletcherstud/spory',
       download: 'https://apps.apple.com/us/app/spory-ai/id6741739697',
@@ -24,7 +26,7 @@ const Projects = () => {
       title: 'New Note',
       description:
         'A note taking app that uses AI to provide additional content to your notes (research papers, youtube videos, wikipedia, etc.). No need to search the web for information, just use New Note.',
-      image: '/projects/new-note.jpg',
+      image: new_note_preview,
       technologies: ['React', 'Electron', 'Firebase', 'Redux'],
       link: '#',
       download: '#',
@@ -44,23 +46,31 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div key={index} className="card card-hover">
               <div className="h-48 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
-                {/* Project image or placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-indigo-600/10 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-indigo-500/20 flex items-center justify-center">
-                    <svg
-                      className="w-8 h-8 text-indigo-400"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                    </svg>
+                {/* Project image */}
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover opacity-70"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-indigo-600/10 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-indigo-500/20 flex items-center justify-center">
+                      <svg
+                        className="w-8 h-8 text-indigo-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-slate-900 to-transparent">
                   <h3 className="text-xl font-bold text-white">{project.title}</h3>
                 </div>
@@ -87,12 +97,16 @@ const Projects = () => {
                     <a
                       href={project.link}
                       className="flex-1 px-4 py-2 rounded-md bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-medium transition-all duration-300 text-sm text-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       View Project
                     </a>
                     <a
                       href={project.download}
-                      className="flex-1 px-4 py-2 rounded-md border border-slate-600 hover:border-slate-400 text-white font-medium transition-all duration-300 text-sm text-center"
+                      className="flex-1 px-4 py-2 rounded-md border border-slate-600 hover:border-slate-400 text-white font-medium transition-all duration-300 text-sm flex items-center justify-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Download
                     </a>
