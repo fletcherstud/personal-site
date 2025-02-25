@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom container */
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto w-full;
+  }
+}
+
 /* Custom animations */
 @keyframes wave {
   0% {
