@@ -3,25 +3,25 @@ const Projects = () => {
     {
       title: 'Knowhere',
       description:
-        'A location-based social platform that helps users discover hidden gems and connect with locals in new cities.',
+        'A centralized platform for businesses to promote their day to day experiences directly to customers so users can discover, plan, and attend local events with friends.',
       image: '/projects/knowhere.jpg',
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'Google Maps API'],
-      link: '#',
-      download: '#',
+      technologies: ['React Native', 'Spring Boot', 'AWS'],
+      link: 'https://knowheresocial.com',
+      download: 'https://links.knowheresocial.com/download',
     },
     {
       title: 'Spory AI',
       description:
-        'An AI-powered sports analytics platform that provides real-time insights and performance metrics for athletes and coaches.',
+        'An app that turns your location into a historical deep dive, powered by AI. Discover the stories behind the places you visit or where you live. Feel more connected to a place, now!',
       image: '/projects/spory-ai.jpg',
-      technologies: ['Python', 'TensorFlow', 'React', 'AWS'],
-      link: '#',
-      download: '#',
+      technologies: ['React Native', 'Firebase', 'OpenAI API'],
+      link: 'https://github.com/fletcherstud/spory',
+      download: 'https://apps.apple.com/us/app/spory-ai/id6741739697',
     },
     {
       title: 'New Note',
       description:
-        'A minimalist note-taking application with powerful organization features and seamless cross-device synchronization.',
+        'A note taking app that uses AI to provide additional content to your notes (research papers, youtube videos, wikipedia, etc.). No need to search the web for information, just use New Note.',
       image: '/projects/new-note.jpg',
       technologies: ['React', 'Electron', 'Firebase', 'Redux'],
       link: '#',
@@ -99,7 +99,7 @@ const Projects = () => {
 
         <div className="mt-16 text-center">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/fletcherstud"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 rounded-md bg-slate-800/70 hover:bg-slate-700/70 text-white font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
