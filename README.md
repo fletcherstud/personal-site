@@ -10,6 +10,7 @@ A modern, responsive developer portfolio website built with React, Vite, and Tai
 - Project showcase
 - Experience timeline
 - Wave background animation
+- Downloadable resume
 
 ## Setup
 
@@ -25,7 +26,11 @@ A modern, responsive developer portfolio website built with React, Vite, and Tai
      - `VITE_EMAILJS_TEMPLATE_ID`: Your EmailJS template ID
      - `VITE_EMAILJS_PUBLIC_KEY`: Your EmailJS public key
 
-4. Start the development server:
+4. Add your resume:
+   - Create a PDF version of your resume
+   - Save it as `public/files/john_fletcher_resume.pdf`
+
+5. Start the development server:
    ```
    npm run dev
    ```

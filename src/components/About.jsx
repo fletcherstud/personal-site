@@ -43,7 +43,13 @@ const About = () => {
                 <a href="#contact" className="btn btn-primary">
                   Get In Touch
                 </a>
-                <a href="#" className="btn btn-secondary">
+                <a
+                  href="/files/john_fletcher_resume.pdf"
+                  className="btn btn-secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
                   Download Resume
                 </a>
               </div>

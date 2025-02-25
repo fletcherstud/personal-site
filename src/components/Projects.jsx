@@ -1,10 +1,12 @@
+import knowhere_preview from '../assets/knowhere_preview.png';
+
 const Projects = () => {
   const projects = [
     {
       title: 'Knowhere',
       description:
         'A centralized platform for businesses to promote their day to day experiences directly to customers so users can discover, plan, and attend local events with friends.',
-      image: '/projects/knowhere.jpg',
+      image: { knowhere_preview },
       technologies: ['React Native', 'Spring Boot', 'AWS'],
       link: 'https://knowheresocial.com',
       download: 'https://links.knowheresocial.com/download',
