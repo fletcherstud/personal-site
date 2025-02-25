@@ -45,8 +45,8 @@ const Hero = () => {
   }, []);
   
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <section id="home" className="min-h-screen flex items-center justify-center py-16">
+      <div className="container mx-auto relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="mb-6 animate-float">
             <svg className="w-16 h-16 md:w-20 md:h-20 text-indigo-500 animate-pulse-slow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,8 +73,9 @@ const Hero = () => {
           </div>
           
           <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-12">
-            Currently working at <span className="font-semibold text-white">Garmin</span> on the Garmin Pay platform team.
-            Building elegant solutions to complex problems with a focus on user experience and performance.
+            Currently working at <span className="font-semibold text-white">Garmin</span> on the Garmin Pay platform team to provide scalable and
+efficient micro services in order to bring the best experience to our
+customers.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6">

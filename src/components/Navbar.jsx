@@ -68,86 +68,38 @@ const Navbar = () => {
   ];
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-slate-900/90 backdrop-blur-md py-3 shadow-lg' 
-          : 'bg-transparent py-5'
-      }`}
-    >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="text-2xl font-bold tracking-tighter">
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
-              John Fletcher
-            </span>
-          </a>
+    <header className="fixed top-0 left-0 right-0 w-full z-50">
+      <nav 
+        className={`w-full transition-all duration-300 ${
+          scrolled 
+            ? 'bg-slate-900/90 backdrop-blur-md shadow-lg' 
+            : 'bg-slate-900/50 backdrop-blur-sm'
+        }`}
+      >
+        <div className="container mx-auto">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+            <a href="#" className="text-2xl font-bold tracking-tighter">
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
+                John Fletcher
+              </span>
+            </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-slate-300 hover:text-white transition-colors duration-300 text-sm tracking-wide font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-slate-300 hover:text-white transition-colors duration-300 text-sm tracking-wide font-medium"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
 
-          {/* Social Icons - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-                aria-label={link.name}
-              >
-                {link.icon}
-              </a>
-            ))}
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-slate-300 hover:text-white focus:outline-none"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-800/95 backdrop-blur-md shadow-xl">
-          <div className="px-4 py-5 space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block text-slate-300 hover:text-white transition-colors duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            
-            <div className="flex space-x-4 pt-4 border-t border-slate-700">
+            {/* Social Icons - Desktop */}
+            <div className="hidden md:flex items-center space-x-3">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
@@ -156,16 +108,66 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="social-icon"
                   aria-label={link.name}
-                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.icon}
                 </a>
               ))}
             </div>
+
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden text-slate-300 hover:text-white focus:outline-none"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-slate-800/95 backdrop-blur-md shadow-xl">
+            <div className="px-4 py-5 space-y-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="block text-slate-300 hover:text-white transition-colors duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              
+              <div className="flex space-x-4 pt-4 border-t border-slate-700">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-icon"
+                    aria-label={link.name}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
   );
 };
 

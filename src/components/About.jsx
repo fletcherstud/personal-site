@@ -11,7 +11,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-slate-900/50 backdrop-blur-sm">
+    <section id="about" className="py-24 bg-slate-900/30 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="section-heading text-center mx-auto mb-16">
           About Me

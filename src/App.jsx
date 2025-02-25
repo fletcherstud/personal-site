@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-900 text-white relative overflow-hidden">
+    <div className="min-h-screen bg-slate-900 text-white">
       {/* Wave Background */}
       <div className="wave-container">
         <div className="wave wave-1 animate-wave"></div>
@@ -19,15 +19,20 @@ function App() {
         <div className="wave wave-3 animate-wave-slower"></div>
       </div>
       
-      <Navbar />
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      {/* Content */}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <div className="sticky top-0 z-50">
+          <Navbar />
+        </div>
+        <main className="flex-grow">
+          <Hero />
+          <About />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }
